@@ -1,0 +1,87 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box !important;
+}
+
+body {
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+body::-webkit-scrollbar {
+  width: 15px;
+  background-color: #373c42;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #282d30;
+  border-radius: 2px;
+}
+
+.scroll-design::-webkit-scrollbar {
+  width: 8px;
+  background-color: #373c42;
+}
+
+.scroll-design::-webkit-scrollbar-thumb {
+  background-color: #282d30;
+  border-radius: 2px;
+}
+
+.Toastify__toast-container {
+  position: fixed !important;
+}
+
+.Toastify {
+  position: fixed !important;
+}
+
+.translate-middle {
+  transform: translate(-50%, -50%) !important;
+}
+
+.ml-26per {
+  margin-left: 25.3%;
+  margin-top: 4.5%;
+}
+
+.ml-3per {
+  margin-left: 3%;
+  margin-top: 4.5%;
+}
+
+.aye::after {
+  transform: scale(0);
+}
+
+.hoverbefore:hover::after {
+  transform: scale(3) !important;
+}
+
+.ela:hover .imgscale {
+  transform: scale(1.05) !important;
+}
+
+.modalScroll {
+  overflow: auto;
+}
+
+.modalScroll::-webkit-scrollbar {
+  width: 15px;
+  background-color: #373c42;
+}
+
+.modalScroll::-webkit-scrollbar-thumb {
+  background-color: #282d30;
+  border-radius: 2px;
+}
