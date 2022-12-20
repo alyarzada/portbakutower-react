@@ -1,5 +1,5 @@
 // Tunar
-import React, { useEffect } from "react";
+import React, { useEffect, useLayoutEffect } from "react";
 import { motion } from "framer-motion";
 import { useSelector, useDispatch } from "react-redux";
 import { ToastContainer, toast } from "react-toastify";
@@ -10,18 +10,29 @@ import DashboardPanel from "./DashboardPanel";
 import "react-toastify/dist/ReactToastify.css";
 import "./styles/style.css";
 import { useScrollToUp } from "../../hooks/useScrollToUp";
+import { dashboardPanels, adminDashboardPanels } from "../../data/data";
+import { getMenus } from "../../app/Slicers/menus";
 
 const ControlPanel = () => {
   const { disableTransform, isDraggable } = useSelector(
     (state) => state.themes
   );
   const { menus } = useSelector((state) => state.menus);
+  const { user } = useSelector((state) => state.auth);
   const dispatch = useDispatch();
   useScrollToUp();
 
   useEffect(() => {
     toast("Wow so easy!");
   }, []);
+
+  useLayoutEffect(() => {
+    if (JSON.parse(localStorage.getItem("user"))?.username === "admin123") {
+      dispatch(getMenus(adminDashboardPanels));
+    } else {
+      dispatch(getMenus(dashboardPanels));
+    }
+  }, [user]);
 
   return (
     <motion.div

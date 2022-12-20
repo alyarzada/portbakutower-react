@@ -1,20 +1,20 @@
 import React, { useState, forwardRef, useEffect } from "react";
 import { Box, Typography, Stack, Button, IconButton } from "@mui/material";
 import NestedModal from "../../components/UI/NestedModal";
+import { useNavigate } from "react-router-dom";
 
-const SubMenuPanel = ({ img, title, closeParentModal }, ref) => {
+const SubMenuPanel = ({ img, title, link, closeParentModal }, ref) => {
   const [open, setOpen] = useState(false);
+  const navigate = useNavigate();
 
   return (
     <Box>
       <Box
-        onClick={() => {
-          setOpen(true);
-        }}
-        className="hover:scale-[1.05] cursor-pointer transition-transform duration-300 rounded flex flex-col items-center justify-center gap-2 h-28 xmd:h-auto bg-zinc-300 px-2 sm:px-6 py-6"
+        onClick={() => (link ? navigate(link) : setOpen(true))}
+        className="hover:scale-[1.05] cursor-pointer transition-transform duration-300 rounded flex flex-col items-center justify-center gap-2 h-28 xmd:h-auto bg-bgMain px-2 sm:px-6 py-6"
       >
-        <img className="w-[70%] sm:w-full" src={img} alt="image" />
-        <Typography className="text-sm sm:text-lg text-center">
+        <img className="w-[70%] sm:w-[100px]" src={img} alt="image" />
+        <Typography className="text-sm sm:text-lg text-center dark:text-text1">
           {title}
         </Typography>
       </Box>

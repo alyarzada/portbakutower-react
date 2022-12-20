@@ -8,16 +8,18 @@ import SettingBar from "../header/SettingBar";
 
 export const Settings = () => {
   const dispatch = useDispatch();
-  const menuRef = useRef();
   const menuToggleRef = useRef();
 
   return (
     <Box>
-      <IconButton ref={menuToggleRef} onClick={() => dispatch(setOpenedSettingBar(true))}>
+      <IconButton
+        ref={menuToggleRef}
+        onClick={() => dispatch(setOpenedSettingBar(true))}
+      >
         <SettingsOutlinedIcon className="animate-spin" />
       </IconButton>
 
-      <SettingBar ref={menuToggleRef}/>
+      <SettingBar ref={menuToggleRef} />
     </Box>
   );
 };

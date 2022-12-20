@@ -44,10 +44,10 @@ const SettingBar = (props, ref) => {
       } transition-transform duration-500 fixed rounded-bl-lg rounded-tl-lg z-20 justify-between top-0 right-0 w-[260px] sm:w-[300px] bg-[#37404A] h-screen shadow-shadowSettings `}
     >
       {/* header */}
-      <Box className="bg-[#313A46] dark:bg-[#C9B26D] rounded-tl-lg flex items-center justify-between px-5 py-6">
-        <h5 className="text-white text-[.9rem] font-semibold">Settings</h5>
+      <Box className="bg-[#313A46] dark:bg-bgLight dark:text-textDark4 rounded-tl-lg flex items-center justify-between px-5 py-6">
+        <h5 className="text-[.9rem] font-semibold">Settings</h5>
         <IconButton onClick={() => dispatch(setOpenedSettingBar(false))}>
-          <HighlightOffRoundedIcon />
+          <HighlightOffRoundedIcon className="dark:text-textDark4" />
         </IconButton>
       </Box>
 

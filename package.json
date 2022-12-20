@@ -32,6 +32,7 @@
     "postcss": "^8.4.14",
     "react": "^18.2.0",
     "react-analog-time-picker": "^1.0.25",
+    "react-credit-cards": "^0.8.3",
     "react-dom": "^18.2.0",
     "react-dropzone": "^14.2.3",
     "react-i18next": "^11.18.3",

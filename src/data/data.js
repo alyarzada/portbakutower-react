@@ -33,7 +33,15 @@ import user from "../assets/managmentPanel/user.png";
 import email from "../assets/managmentPanel/email.png";
 import money from "../assets/managmentPanel/money.png";
 import wallet from "../assets/managmentPanel/wallet.png";
+import setting from "../assets/managmentPanel/setting.png";
+import tools from "../assets/managmentPanel/tools.png";
+import phoneCall from "../assets/managmentPanel/phone-call.png";
 import magnifiyingGlass from "../assets/managmentPanel/magnifying-glass.png";
+import announcement from "../assets/managmentPanel/megaphone.png";
+import rent from "../assets/managmentPanel/rent.png";
+import invoice from "../assets/managmentPanel/invoice.png";
+import bed from "../assets/managmentPanel/bed.png";
+import chef from "../assets/managmentPanel/chef.png";
 
 // sidebar
 import CampaignOutlinedIcon from "@mui/icons-material/CampaignOutlined";
@@ -51,12 +59,20 @@ import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined
 import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined";
 import TelegramIcon from "@mui/icons-material/Telegram";
 import PriceCheckOutlinedIcon from "@mui/icons-material/PriceCheckOutlined";
-import AccountBalanceWalletOutlinedIcon from '@mui/icons-material/AccountBalanceWalletOutlined';
-import AttachMoneyOutlinedIcon from '@mui/icons-material/AttachMoneyOutlined';
-import QueryStatsOutlinedIcon from '@mui/icons-material/QueryStatsOutlined';
+import AccountBalanceWalletOutlinedIcon from "@mui/icons-material/AccountBalanceWalletOutlined";
+import AttachMoneyOutlinedIcon from "@mui/icons-material/AttachMoneyOutlined";
+import QueryStatsOutlinedIcon from "@mui/icons-material/QueryStatsOutlined";
+
+import onlineRegistration from "../assets/managmentPanel/online-registration.png";
+import parking from "../assets/managmentPanel/parking.png";
+import maintenance from "../assets/managmentPanel/maintenance.png";
+import meetingRoom from "../assets/managmentPanel/coworking.png";
+import paymentGateway from "../assets/managmentPanel/payment-gateway.png";
+import customerService from "../assets/managmentPanel/customer-service.png";
+import market from "../assets/managmentPanel/market.png";
 
 // control panels
-export const dashboardPanels = [
+export const adminDashboardPanels = [
   {
     id: 1,
     title: "",
@@ -206,8 +222,119 @@ export const dashboardPanels = [
   },
 ];
 
+export const dashboardPanels = [
+  {
+    id: 1,
+    title: "",
+    panels: [
+      {
+        id: 1,
+        parentId: 1,
+        title: "Qonaqların Qeydiyyatı",
+        img: onlineRegistration,
+      },
+      {
+        id: 2,
+        title: "Parkinq Sifarişi",
+        img: parking,
+        link: "/",
+      },
+      {
+        id: 3,
+        title: "Texniki Personal",
+        img: maintenance,
+        subCategory: [
+          {
+            id: 1,
+            title: "Elektrik",
+            img: setting,
+          },
+          {
+            id: 2,
+            title: "Mexanik",
+            img: tools,
+          },
+          {
+            id: 3,
+            title: "Müraciət",
+            img: email,
+          },
+          {
+            id: 4,
+            title: "Zəng edin",
+            img: phoneCall,
+          },
+        ],
+      },
+      {
+        id: 4,
+        title: "Daxili Miting Otağı",
+        img: meetingRoom,
+        link: "/meetingroom",
+      },
+      {
+        id: 5,
+        title: "Elanlar lövhəsi",
+        img: announcement,
+        panels: [],
+      },
+      {
+        id: 6,
+        title: "Müraciət və Şikayətlər",
+        img: email,
+        link: "/requests",
+      },
+      {
+        id: 7,
+        title: "Əlavə Xidmətlər",
+        img: market,
+        subCategory: [
+          {
+            id: 1,
+            img: chef,
+            title: "Yemək sifarişi",
+            link: "/",
+          },
+          {
+            id: 2,
+            img: bed,
+            title: "İstirahət otağı",
+            link: "/",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 2,
+    title: "Ödəniş və Maliyyə",
+    panels: [
+      {
+        id: 1,
+        parentId: 2,
+        title: "Ödənişlər",
+        img: paymentGateway,
+        subCategory: [
+          {
+            id: 1,
+            title: "Icarə ödənişi",
+            img: rent,
+            link: "/rentpayment",
+          },
+          {
+            id: 2,
+            title: "Ödənişlərin arxivi",
+            img: invoice,
+            link: "",
+          },
+        ],
+      },
+    ],
+  },
+];
+
 // sidebar list
-export const sidebarMenu = [
+export const sideBarMenu = [
   {
     id: 1,
     title: "idareetmepaneli",
@@ -218,7 +345,104 @@ export const sidebarMenu = [
     id: 2,
     title: "elanlarlovhesi",
     icon: CampaignOutlinedIcon,
-    path: "/complexpanel",
+    path: "/",
+  },
+  {
+    id: 3,
+    title: "idareetme",
+    icon: BusinessCenterOutlinedIcon,
+    path: "",
+    sublist: [
+      {
+        title: "Qonaqların Qeydiyyatı",
+        icon: DnsOutlinedIcon,
+        path: "/",
+      },
+      {
+        title: "Parkinq Sifarişi",
+        icon: CurrencyExchangeIcon,
+        path: "/",
+      },
+      {
+        title: "Texniki Personal",
+        icon: AddCardOutlinedIcon,
+        path: "/",
+      },
+      {
+        title: "Daxil Miting Otağı",
+        icon: Person2OutlinedIcon,
+        path: "/",
+      },
+      {
+        title: "Müraciət və Şikayətlər",
+        icon: FormatListBulletedOutlinedIcon,
+        path: "/",
+      },
+      {
+        title: "Biznes Mərkəzi",
+        icon: EqualizerOutlinedIcon,
+        path: "/",
+      },
+    ],
+  },
+  {
+    id: 4,
+    title: "odeneisvemaliyyepaneli",
+    icon: PriceCheckOutlinedIcon,
+    path: "",
+    sublist: [
+      {
+        title: "Ödənişlər",
+        icon: AccountBalanceWalletOutlinedIcon,
+        path: "/",
+      },
+      {
+        title: "Əlavə xidmətlər",
+        icon: AttachMoneyOutlinedIcon,
+        path: "/",
+      },
+    ],
+  },
+  { id: 5, title: "elaqe", icon: LocalPhoneOutlinedIcon, path: "/contact" },
+  {
+    id: 6,
+    title: "melumatmasasi",
+    icon: InfoOutlinedIcon,
+    path: "/information",
+  },
+  {
+    id: 7,
+    title: "istifadeci",
+    icon: AccountCircleOutlinedIcon,
+    path: "",
+    sublist: [
+      {
+        title: "profil",
+        icon: PersonOutlineOutlinedIcon,
+        path: "/profile",
+      },
+      {
+        title: "yazisma",
+        icon: TelegramIcon,
+        path: "/",
+      },
+    ],
+  },
+];
+
+// sidebar list
+export const adminSidebarMenu = [
+  {
+    id: 1,
+    title: "idareetmepaneli",
+    icon: AdminPanelSettingsOutlinedIcon,
+    path: "/",
+  },
+  {
+    id: 2,
+    title: "elanlarlovhesi",
+    icon: CampaignOutlinedIcon,
+    path: "/",
   },
   {
     id: 3,
@@ -229,46 +453,32 @@ export const sidebarMenu = [
       {
         title: "umumibaza",
         icon: DnsOutlinedIcon,
-        path: "/notifications",
+        path: "/",
       },
       {
         title: "dovriyyemodulu",
         icon: CurrencyExchangeIcon,
-        path: "/communalservices",
+        path: "/",
       },
       {
         title: "kartlarinqeydiyyatmodulu",
         icon: AddCardOutlinedIcon,
-        path: "/requests",
+        path: "/",
       },
       {
         title: "sexsikabinet",
         icon: Person2OutlinedIcon,
-        path: "",
-        managmentSublist: [
-          {
-            title: "iclasotagi",
-            path: "/meetingroom",
-          },
-          {
-            title: "kinozal",
-            path: "/cinema",
-          },
-          {
-            title: "teqvim",
-            path: "/calendar",
-          },
-        ],
+        path: "/",
       },
       {
         title: "tapsiriqmodulu",
         icon: FormatListBulletedOutlinedIcon,
-        path: "/user-card-request",
+        path: "/",
       },
       {
         title: "statistikgostericiler",
         icon: EqualizerOutlinedIcon,
-        path: "/user-tenant-registration",
+        path: "/",
       },
     ],
   },
@@ -281,17 +491,17 @@ export const sidebarMenu = [
       {
         title: "mesreflerinqeydiyyati",
         icon: AccountBalanceWalletOutlinedIcon,
-        path: "/notifications",
+        path: "/",
       },
       {
         title: "maliyyeplanı",
         icon: AttachMoneyOutlinedIcon,
-        path: "/communalservices",
+        path: "/",
       },
       {
         title: "maliyyegostericileri",
         icon: QueryStatsOutlinedIcon,
-        path: "/requests",
+        path: "/",
       },
     ],
   },

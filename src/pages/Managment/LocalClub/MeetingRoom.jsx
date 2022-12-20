@@ -97,7 +97,7 @@ const MeetingRoom = () => {
       </Box>
 
       <Box>
-        <Box className="my-4 rounded py-6 px-6 bg-bgLight drop-shadow-lg dark:bg-gradient-to-r dark:from-mainPrimary dark:to-mainSecondary w-full">
+        <Box className="my-4 rounded py-6 px-6 bg-bgLight drop-shadow-lg dark:bg-bgMain w-full">
           <Box className="flex justify-end mb-6">
             <Button
               startIcon={<AddCircleOutlineOutlinedIcon />}

@@ -84,7 +84,7 @@ const Requests = () => {
       <Stack direction={{ xs: "column-reverse", lg: "row" }} spacing={2}>
         <Box
           className="w-full lg:w-[24%] rounded p-6 text-textDark bg-bgLight  drop-shadow-lg hover:drop-shadow-xl 
-              dark:bg-gradient-to-r dark:from-mainPrimary dark:to-mainSecondary dark:text-white"
+              dark:bg-bgMain dark:text-white"
         >
           <Button
             startIcon={<AddCircleOutlineOutlinedIcon />}

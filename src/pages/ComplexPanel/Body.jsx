@@ -103,7 +103,7 @@ const Body = () => {
       justifyContent="space-between"
     >
       <Box className="w-full md:w-[40%]">
-        <Box className="rounded p-4 mb-4 dark:text-text1 dark:bg-gradient-to-r  dark:from-mainPrimary dark:to-mainSecondary">
+        <Box className="rounded p-4 mb-4 dark:text-text1 dark:bg-gradient-to-r  dark:bg-bgMain">
           <Stack
             direction="row"
             justifyContent="space-between"
@@ -171,7 +171,7 @@ const Body = () => {
           </Box>
         </Box>
 
-        <Box className="rounded p-6 mb-6 dark:text-text1 dark:bg-gradient-to-r dark:from-mainPrimary dark:to-mainSecondary">
+        <Box className="rounded p-6 mb-6 dark:text-text1 dark:bg-bgMain">
           <Typography
             className="cursor-pointer select-none text-logoColor hover:text-yellow-600 text-lg w-fit font-semibold"
             onClick={() => setOpenModal(true)}
@@ -245,7 +245,7 @@ const Body = () => {
           </CustomModal>
         ) : null}
 
-        <Box className="rounded mb-6 dark:bg-gradient-to-r dark:from-mainPrimary dark:to-mainSecondary">
+        <Box className="rounded mb-6 dark:bg-bgMain">
           <MapContainer
             center={[40.37665543757066, 49.85999537195368]}
             zoom={13}
@@ -277,7 +277,7 @@ const Body = () => {
         </Box>
       </Box>
 
-      <Box className="w-full md:w-[58%] rounded p-4 text-textDark4 dark:text-text1 dark:bg-gradient-to-r dark:from-mainPrimary   dark:to-mainSecondary">
+      <Box className="w-full md:w-[58%] rounded p-4 text-textDark4 dark:text-text1 dark:bg-bgMain">
         <Outlet />
       </Box>
     </Stack>

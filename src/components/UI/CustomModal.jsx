@@ -38,17 +38,17 @@ const CustomModal = ({ children, title, handleClose }, ref) => {
   return (
     <motion.div
       ref={ref}
-      className="fixed top-0 left-0 h-full w-full bg-[#0000009a] flex items-center justify-center z-[4000] modalScroll"
+      className="fixed top-0 left-0 h-full w-full bg-[#0c0c0ce0] flex items-center justify-center z-[4000] modalScroll"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
     >
       <motion.div
         ref={ref}
-        className="w-[94%] sm:w-[80%] md:w-[48%] bg-[#fff] dark:bg-[#020a15]
-        shadow-lg rounded-xl"
+        className="w-[94%] sm:w-[80%] md:w-[48%] bg-[#fff] dark:bg-bgSecond
+        shadow-lg rounded-xl "
         initial="hidden"
-        animate="visible"
+        animate="visible" 
         exit="exit"
         variants={dropIn}
         onClick={(e) => e.stopPropagation()}

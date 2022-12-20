@@ -1,10 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+const initialState = {
+  events: [],
+};
+
 export const eventSlicer = createSlice({
   name: "events",
-  initialState: {
-    events: [],
-  },
+  initialState: initialState,
   reducers: {
     editEvents: (state, action) => {
       state.events = state.events.map((event) => {

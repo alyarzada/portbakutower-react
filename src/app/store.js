@@ -3,6 +3,7 @@ import themesReducer from "./Slicers/themes";
 import eventReducer from "./Slicers/events";
 import menusReducer from "./Slicers/menus";
 import menuReducer from "./Slicers/restaurantMenu";
+import authReducer from "./Slicers/auth";
 
 export const store = configureStore({
   reducer: {
@@ -10,6 +11,7 @@ export const store = configureStore({
     events: eventReducer,
     menus: menusReducer,
     restaurantMenu: menuReducer,
+    auth: authReducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({

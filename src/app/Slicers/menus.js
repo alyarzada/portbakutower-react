@@ -1,12 +1,20 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { dashboardPanels } from "../../data/data";
+
+const initialState = {
+  menus: [],
+  sidebarMenu: [],
+};
 
 export const menusSlicer = createSlice({
   name: "menus",
-  initialState: {
-    menus: dashboardPanels,
-  },
+  initialState: initialState,
   reducers: {
+    getMenus: (state, action) => {
+      state.menus = action.payload;
+    },
+    getSidebarMenu: (state, action) => {
+      state.sidebarMenu = action.payload;
+    },
     reOrderMenus: (state, action) => {
       state.menus = action.payload;
     },
@@ -21,5 +29,6 @@ export const menusSlicer = createSlice({
   },
 });
 
-export const { reOrderMenus, reOrderPanels } = menusSlicer.actions;
+export const { reOrderMenus, reOrderPanels, getMenus, getSidebarMenu } =
+  menusSlicer.actions;
 export default menusSlicer.reducer;

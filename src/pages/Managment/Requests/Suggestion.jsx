@@ -12,7 +12,7 @@ const Suggestion = () => {
       variants={variants}
       initial="hidden"
       animate="visible"
-      className="dark:bg-gradient-to-r bg-bgLight drop-shadow-lg dark:from-mainPrimary dark:to-mainSecondary text-text1 min-h-full rounded p-3"
+      className="dark:bg-bgMain bg-bgLight drop-shadow-lg  text-text1 min-h-full rounded p-3"
     >
       Suggestion
     </motion.div>

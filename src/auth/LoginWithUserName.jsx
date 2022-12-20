@@ -1,6 +1,6 @@
 import React from "react";
-import { Box, Button, Checkbox, Stack, FormControlLabel } from "@mui/material";
-import { useSelector } from "react-redux";
+import { Button, Checkbox, Stack, FormControlLabel } from "@mui/material";
+import { useSelector, useDispatch } from "react-redux";
 import { Formik, Form } from "formik";
 import CustomTextField from "../components/Form/CustomTextField";
 import LoginIcon from "@mui/icons-material/Login";
@@ -9,8 +9,11 @@ import { LoginSchema } from "../validations/login_validation";
 import { motion } from "framer-motion";
 
 const LoginWithUserName = () => {
-  const navigate = useNavigate();
   const { light } = useSelector((state) => state.themes);
+  const { user } = useSelector((state) => state.auth);
+
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   return (
     <motion.div
@@ -22,7 +25,10 @@ const LoginWithUserName = () => {
       <Formik
         initialValues={{ username: "", password: "", accept: false }}
         onSubmit={(values) => {
-          navigate("/");
+          if (values.username === "admin123" || values.username === "user123") {
+            localStorage.setItem("user", JSON.stringify(values));
+            navigate("/");
+          }
         }}
         validationSchema={LoginSchema}
       >

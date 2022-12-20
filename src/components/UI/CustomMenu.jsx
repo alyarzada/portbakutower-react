@@ -51,7 +51,7 @@ const CustomMenu = forwardRef(
           stiffness: 500,
         }}
         ref={menuRef}
-        className={`${className} absolute z-40 rounded bg-bgLight text-black dark:bg-gradient-to-r dark:from-mainPrimary dark:to-mainSecondary dark:text-white
+        className={`${className} absolute z-40 rounded bg-bgLight text-black dark: dark:bg-bgMain dark:text-white
         `}
       >
         {editDelete ? ( 

@@ -1,12 +1,12 @@
 // Tunar
-import React from "react";
-import { useSelector } from "react-redux";
+import React, { useLayoutEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
 import { useMediaQuery, Box, Stack, Typography } from "@mui/material";
-import { sidebarMenu } from "../../data/data";
 import SidebarItem from "./SidebarItem";
+import { getSidebarMenu } from "../../app/Slicers/menus";
 
 import ios from "../../assets/images/logos/ios.png";
 import android from "../../assets/images/logos/android.png";
@@ -16,6 +16,8 @@ import logo from "../../assets/logo/4.png";
 import logoSmall from "../../assets/logo/5.png";
 import logoLightSmall from "../../assets/logo/6.png";
 import logoLight from "../../assets/logo/7.png";
+
+import { sideBarMenu, adminSidebarMenu } from "../../data/data";
 
 const months = [
   "Yanvar",
@@ -36,8 +38,19 @@ const SideBar = () => {
   const { openedSidebar, leftLight, light } = useSelector(
     (state) => state.themes
   );
+  const { sidebarMenu } = useSelector((state) => state.menus);
+  const { user } = useSelector((state) => state.auth);
   const { t } = useTranslation();
   const matches = useMediaQuery("(max-width:768px)");
+  const dispatch = useDispatch();
+
+  useLayoutEffect(() => {
+    if (JSON.parse(localStorage.getItem("user"))?.username === "admin123") {
+      dispatch(getSidebarMenu(adminSidebarMenu));
+    } else {
+      dispatch(getSidebarMenu(sideBarMenu));
+    }
+  }, [user]);
 
   return (
     <motion.div
@@ -51,7 +64,7 @@ const SideBar = () => {
           ? { x: openedSidebar ? "0" : "-100%", width: "250px" }
           : { width: openedSidebar ? "250px" : "80px" }
       }
-      transition={{ type: "spring", duration: 0.5 }}
+      transition={{ duration: 0.5 }}
     >
       <Box className="mb-6 mt-3 h-16" onClick={() => window.scrollTo(0, 0)}>
         <Link to="/">

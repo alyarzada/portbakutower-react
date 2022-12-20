@@ -64,6 +64,7 @@ const Internet = lazy(() =>
   import("../pages/Managment/CommunalServices/Internet")
 );
 const Tv = lazy(() => import("../pages/Managment/CommunalServices/Tv"));
+const RentPayment = lazy(() => import("../pages/PaymentAndFinance/RentPayment"));
 
 const routes = [
   {
@@ -85,6 +86,10 @@ const routes = [
       {
         path: "calendar",
         element: <CalendarPage />,
+      },
+      {
+        path: "rentpayment",
+        element: <RentPayment />,
       },
       {
         path: "profile",

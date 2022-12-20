@@ -1,13 +1,15 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { dummyMenu } from "../../data/data";
 
+const initialState = {
+  menu: dummyMenu,
+  categories: dummyMenu,
+  card: [],
+};
+
 const restaurantMenuSlicer = createSlice({
   name: "restaurantMenu",
-  initialState: {
-    menu: dummyMenu,
-    categories: dummyMenu,
-    card: [],
-  },
+  initialState: initialState,
   reducers: {
     getAllMenu: (state) => {
       state.menu = dummyMenu;

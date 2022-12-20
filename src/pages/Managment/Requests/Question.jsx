@@ -12,7 +12,7 @@ const Question = () => {
       variants={variants}
       initial="hidden"
       animate="visible"
-      className="bg-bgLight drop-shadow-lg dark:bg-gradient-to-r dark:from-mainPrimary dark:to-mainSecondary text-text1 min-h-full rounded p-3"
+      className="bg-bgLight drop-shadow-lg dark:bg-bgMain text-text1 min-h-full rounded p-3"
     >
       Question
     </motion.div>

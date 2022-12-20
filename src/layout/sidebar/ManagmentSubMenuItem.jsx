@@ -42,18 +42,18 @@ const ManagmentSubMenuItem = ({ sublistItem, Icon, parentHeight }, ref) => {
         }}
         className={`${
           openedSidebar
-            ? "px-4 group mx-auto w-[90%] hover-effect rounded hover:text-white"
+            ? "px-4 group mx-auto w-[90%] hover-effect rounded hover:text-textDark4"
             : "w-[173px] pl-[3px]"
         } py-2 flex justify-between cursor-pointer`}
       >
-        <span className={`text-[13px] ${!openedSidebar && "text-text1"}`}>
-          <Icon className="w-[20px] group-hover:text-white" />
+        <span className={`text-[13px] ${!openedSidebar && "text-text1 dark:text-textDark4"}`}>
+          <Icon className="w-[20px] group-hover:text-textDark4" />
           <span className={`${openedSidebar && "ml-3 align-bottom"}`}>
             {t(sublistItem.title)}
           </span>
         </span>
         {sublistItem.managmentSublist ? (
-          <ChevronRightIcon className="text-white" />
+          <ChevronRightIcon className="text-text1 dark:text-textDark4" />
         ) : null}
       </Link>
       {sublistItem.managmentSublist ? (
@@ -68,7 +68,7 @@ const ManagmentSubMenuItem = ({ sublistItem, Icon, parentHeight }, ref) => {
             className={`text-text1 rounded transition-all duration-300 ${
               openedSidebar
                 ? "static"
-                : "absolute -top-1 left-[180px] bg-logoColor"
+                : "absolute -top-1 left-[180px] bg-logoColor dark:text-textDark4"
             }`}
           >
             {sublistItem.managmentSublist.map(({ path, title }, index) => (
@@ -77,7 +77,7 @@ const ManagmentSubMenuItem = ({ sublistItem, Icon, parentHeight }, ref) => {
                   to={path}
                   className={`${
                     openedSidebar
-                      ? "px-9 py-2 w-[80%] mx-auto hover-effect rounded hover:text-white"
+                      ? "px-9 py-2 w-[80%] mx-auto hover-effect rounded hover:text-textDark4"
                       : "w-28 py-2 pl-3"
                   } block`}
                   onClick={() => matches && dispatch(setOpenedSidebar())}

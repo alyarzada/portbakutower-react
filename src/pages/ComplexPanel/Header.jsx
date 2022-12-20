@@ -20,7 +20,7 @@ const Header = () => {
             alt="port-baku-image"
           />
         </Box>
-        <Box className="relative rounded-b h-28 dark:bg-gradient-to-r dark:from-mainPrimary dark:to-mainSecondary">
+        <Box className="relative rounded-b h-28 dark:bg-bgMain">
           <Box className="absolute -top-5 left-1 md:left-7">
             <img
               className="w-36 h-36 border-4 rounded-[50%]"
@@ -45,7 +45,7 @@ const Header = () => {
 
       <Box
         className="rounded mb-6 flex p-3 justify-end 
-          dark:bg-gradient-to-r dark:from-mainPrimary dark:to-mainSecondary"
+        dark:bg-bgMain"
       >
         <Breadcrumbs
           separator={

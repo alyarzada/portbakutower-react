@@ -1,20 +1,21 @@
 import { createSlice } from "@reduxjs/toolkit/";
-
 const mediaQuery = window.matchMedia("(max-width: 768px)");
+
+const initialState = {
+  openedSidebar: mediaQuery.matches ? false : true,
+  openedSettingBar: false,
+  light: false,
+  boxed: false,
+  leftLight: "dark",
+  scrollable: false,
+  disableTransform: false,
+  isDraggable: false,
+  showCardIcon: false,
+};
 
 export const themes = createSlice({
   name: "themes",
-  initialState: {
-    openedSidebar: mediaQuery.matches ? false : true,
-    openedSettingBar: false,
-    light: false,
-    boxed: false,
-    leftLight: "dark",
-    scrollable: false,
-    disableTransform: false,
-    isDraggable: false,
-    showCardIcon: false,
-  },
+  initialState: initialState,
   reducers: {
     setOpenedSidebar: (state) => {
       state.openedSidebar = !state.openedSidebar;

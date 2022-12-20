@@ -35,7 +35,7 @@ const CreateNewRequest = () => {
   const { t } = useTranslation();
   return (
     <motion.div
-      className="w-full p-6 rounded flex-1 text-textDark bg-bgLight  drop-shadow-lg hover:drop-shadow-xl dark:bg-gradient-to-r dark:from-mainPrimary dark:to-mainSecondary dark:text-white"
+      className="w-full p-6 rounded flex-1 text-textDark bg-bgLight  drop-shadow-lg hover:drop-shadow-xl dark:bg-bgMain dark:text-white"
       variants={variants}
       initial="hidden"
       animate="visible"

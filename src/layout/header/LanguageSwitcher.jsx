@@ -41,7 +41,7 @@ export default function LanguageSwitcher() {
             ? "Русский"
             : ""}
         </span>
-        <KeyboardArrowDownIcon />
+        <KeyboardArrowDownIcon className="dark:text-white" />
       </button>
 
       {openMenu ? (

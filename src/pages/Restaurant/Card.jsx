@@ -18,7 +18,6 @@ import HomeIcon from "@mui/icons-material/Home";
 import GrainIcon from "@mui/icons-material/Grain";
 import { setShowCardIcon } from "../../app/Slicers/themes";
 
-
 const Card = () => {
   const { card } = useSelector((state) => state.restaurantMenu);
   const { t } = useTranslation();
@@ -33,11 +32,7 @@ const Card = () => {
   }, []);
 
   return (
-    <div
-      // initial={{ x: "50%" }}
-      // animate={{ x: "0" }}
-      // transition={{ duration: 0.4, bounce: 0.4, type: "spring" }}
-    >
+    <div>
       {card.length > 0 ? (
         <Box>
           <Stack direction="row" justifyContent="space-between">

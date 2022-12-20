@@ -4,6 +4,8 @@ import { useNavigate } from "react-router-dom";
 import { Typography, Box, Stack } from "@mui/material";
 import SubMenuPanel from "./subMenuPanel";
 import CustomModal from "../../components/UI/CustomModal";
+import GuestRegistration from "./GuestRegistration";
+import AnnouncmentPanel from "./AnnouncmentPanel";
 
 const EachPanel = ({
   img,
@@ -12,6 +14,7 @@ const EachPanel = ({
   link,
   id,
   panelId,
+  parentId,
   description,
 }) => {
   const { t } = useTranslation();
@@ -56,14 +59,10 @@ const EachPanel = ({
             alignItems="center"
             spacing={1}
           >
-            {panelId === 10 ? (
-              <Typography
-                className="dark:text-text1"
-                variant="h5"
-                component="h1"
-              >
-                {description}
-              </Typography>
+            {panelId === 1 && parentId === 1 ? (
+              <GuestRegistration />
+            ) : panelId === 5 ? (
+              <AnnouncmentPanel />
             ) : (
               subCategory?.map((category, index) => (
                 <SubMenuPanel

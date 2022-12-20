@@ -49,6 +49,9 @@ const UserMenu = () => {
               key={index}
               onClick={() => {
                 navigate(list.path);
+                if (index === 1) {
+                  localStorage.removeItem("user");
+                }
                 setOpenMenu(false);
               }}
             >
